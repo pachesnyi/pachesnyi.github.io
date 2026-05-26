@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import PostCard from "../components/PostCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_DESCRIPTION, profile } from "../consts";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout description={SITE_DESCRIPTION}>
+  <section class="hero shell">
+    <div>
+      <h1>{profile.name}</h1>
+      <p class="hero-copy">
+        Senior software engineer and tech lead in Amsterdam. I build frontend platforms,
+        AI-assisted engineering workflows, and scalable product systems.
+      </p>
+      <p class="hero-copy">
+        Writing about AI workflows, frontend architecture, context engineering, and the practical
+        choices behind software that survives real production use.
+      </p>
+      <div class="intro-links">
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a href={profile.linkedin}>LinkedIn</a>
+        <a href={profile.github}>GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell" aria-labelledby="specialization">
+    <div class="section-head">
+      <h2 id="specialization" class="section-title">Focus</h2>
+    </div>
+    <ul class="plain-list">
+      <li><strong>AI workflows:</strong> planning, code review, test generation, transcription analysis, and recommendation systems.</li>
+      <li><strong>Frontend platforms:</strong> React, Angular, Module Federation, micro-frontends, reusable packages, and design systems.</li>
+      <li><strong>Technical leadership:</strong> architecture, delivery, mentoring, frontend standards, and production ownership.</li>
+    </ul>
+  </section>
+
+  <section class="section shell" aria-labelledby="latest-writing">
+    <div class="section-head">
+      <h2 id="latest-writing" class="section-title">Latest Writing</h2>
+    </div>
+    <div class="post-list">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+    <p class="section-note">
+      <a href="/blog/">View all writing →</a>
+    </p>
+  </section>
+</BaseLayout>

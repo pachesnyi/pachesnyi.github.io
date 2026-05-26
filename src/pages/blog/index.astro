@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import PostCard from "../../components/PostCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog" description="Writing about AI, frontend engineering, and product craft.">
+  <section class="page shell">
+    <header class="page-header">
+      <p class="eyebrow">Blog</p>
+      <h1>Notes on AI, frontend, and product craft.</h1>
+      <p>
+        A place for working thoughts, technical essays, and field notes from building interfaces
+        for intelligent software.
+      </p>
+    </header>
+
+    <div class="post-list">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

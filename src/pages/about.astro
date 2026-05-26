@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile } from "../consts";
+---
+
+<BaseLayout title="About" description="About Ivan Pachesnyi, AI-focused frontend engineer.">
+  <section class="page shell">
+    <header class="page-header">
+      <h1>About</h1>
+      <p>
+        I am {profile.name}, a senior software engineer and tech lead with 10+ years of experience
+        building frontend platforms, scalable product systems, and AI workflows from Amsterdam.
+      </p>
+    </header>
+
+    <section class="section" aria-labelledby="work">
+      <h2 id="work" class="section-title">Work</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Frontend platforms</h3>
+          <p>
+            React, Angular, TypeScript, RxJS, NgRx, Module Federation, micro-frontends, reusable
+            packages, and product UI foundations.
+          </p>
+        </article>
+        <article class="card">
+          <h3>AI workflows</h3>
+          <p>
+            LLM workflows for planning, code review, refactoring, test generation, transcription
+            analysis, and recommendations.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Delivery</h3>
+          <p>
+            Technical design, team standards, mentoring, cross-team delivery, and production
+            ownership for systems used at real scale.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience">
+      <h2 id="experience" class="section-title">Experience</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="post-date">2024 - Present</span>
+          <div>
+            <h3>KPN via Prodapt Consulting</h3>
+            <p>
+              Built AI workflows for planning, code review, and test generation; designed an
+              LLM-based implementation workflow; and architected a composable micro-frontend
+              platform with Module Federation and token exchange.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="post-date">2020 - 2023</span>
+          <div>
+            <h3>Roku</h3>
+            <p>
+              Led frontend initiatives for an advertising platform, built reusable React packages,
+              mentored engineers, and helped guide a migration from Angular to React and Node.js.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="post-date">Freelance</span>
+          <div>
+            <h3>Rentokil Australia</h3>
+            <p>
+              Owned a production field-operations platform end to end, replacing paper-based
+              inspection workflows for a system used daily by 2,100+ employees.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="background">
+      <h2 id="background" class="section-title">Background</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Companies</h3>
+          <p>KPN, Roku, Rentokil Australia, Extrawest, TemplateMonster, and RocketCompany.</p>
+        </article>
+        <article class="card">
+          <h3>Domains</h3>
+          <p>Telecom, advertising, field operations, EV platforms, booking, and e-commerce.</p>
+        </article>
+        <article class="card">
+          <h3>Education</h3>
+          <p>Master's in Software Engineering, Admiral Makarov National University of Shipbuilding.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-band" aria-labelledby="contact">
+      <h2 id="contact" class="section-title">Contact</h2>
+      <div class="intro-links">
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a href={profile.linkedin}>LinkedIn</a>
+        <a href={profile.github}>GitHub</a>
+      </div>
+    </section>
+  </section>
+</BaseLayout>

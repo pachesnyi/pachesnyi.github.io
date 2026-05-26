@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+import { SITE_DESCRIPTION, SITE_TITLE, profile } from "../consts";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+} = Astro.props;
+
+const pageTitle = title === SITE_TITLE ? title : `${title} | ${SITE_TITLE}`;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0d0f12" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      const storedTheme = localStorage.getItem("theme");
+      const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      const theme = storedTheme || (prefersLight ? "light" : "dark");
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label={`${SITE_TITLE} home`}>
+          <span class="brand-mark">IP</span>
+          <span class="brand-name">{SITE_TITLE}</span>
+        </a>
+        <div class="nav-actions">
+          <div class="nav-links">
+            <a class="nav-link" href="/blog/" aria-current={currentPath.startsWith("/blog") ? "page" : undefined}>Blog</a>
+            <a class="nav-link" href="/about/" aria-current={currentPath.startsWith("/about") ? "page" : undefined}>About</a>
+          </div>
+          <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+            <svg class="moon-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.5 14.4A8 8 0 0 1 9.6 3.5 8.5 8.5 0 1 0 20.5 14.4Z"></path>
+            </svg>
+            <svg class="sun-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner shell">
+        <span>© {new Date().getFullYear()} {profile.name}. Built with Astro.</span>
+        <div class="footer-links">
+          <a href={profile.github}>GitHub</a>
+          <a href={profile.linkedin}>LinkedIn</a>
+          <a href={`mailto:${profile.email}`}>Email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector("[data-theme-toggle]");
+
+      toggle?.addEventListener("click", () => {
+        const currentTheme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+        document.documentElement.dataset.theme = nextTheme;
+        document.documentElement.style.colorScheme = nextTheme;
+        localStorage.setItem("theme", nextTheme);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "pachesnyi.github.io",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^6.3.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
