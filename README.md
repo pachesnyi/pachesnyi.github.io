@@ -30,3 +30,13 @@ draft: false
 The site is static and can be deployed to GitHub Pages or Netlify.
 
 For Netlify, the included `netlify.toml` builds with `npm run build` and publishes `dist`.
+
+## Analytics
+
+Cloudflare Web Analytics is enabled when this environment variable is set:
+
+```sh
+PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN=your-token
+```
+
+In Netlify, add it under **Site configuration → Environment variables** and redeploy.

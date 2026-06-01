@@ -14,6 +14,8 @@ const {
 
 const pageTitle = title === SITE_TITLE ? title : `${title} | ${SITE_TITLE}`;
 const currentPath = Astro.url.pathname;
+const cloudflareAnalyticsToken = import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
+const cloudflareBeaconConfig = JSON.stringify({ token: cloudflareAnalyticsToken });
 ---
 
 <!doctype html>
@@ -28,6 +30,15 @@ const currentPath = Astro.url.pathname;
     <meta name="theme-color" content="#0d0f12" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
+    {
+      cloudflareAnalyticsToken && (
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={cloudflareBeaconConfig}
+        />
+      )
+    }
     <script is:inline>
       const storedTheme = localStorage.getItem("theme");
       const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
@@ -70,8 +81,8 @@ const currentPath = Astro.url.pathname;
       <div class="footer-inner shell">
         <span>© {new Date().getFullYear()} {profile.name}. Built with Astro.</span>
         <div class="footer-links">
-          <a href={profile.github}>GitHub</a>
-          <a href={profile.linkedin}>LinkedIn</a>
+          <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           <a href={`mailto:${profile.email}`}>Email</a>
         </div>
       </div>

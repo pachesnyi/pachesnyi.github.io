@@ -7,6 +7,6 @@ export const profile = {
   role: "Senior Software Engineer / Tech Lead",
   location: "Amsterdam, Netherlands",
   email: "vanya.pachesnyi@gmail.com",
-  github: "https://github.com/ipachesnyi",
+  github: "https://github.com/pachesnyi",
   linkedin: "https://www.linkedin.com/in/ivan-pachesnyi",
 };
