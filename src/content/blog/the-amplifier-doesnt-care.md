@@ -6,7 +6,7 @@ tags: ["AI", "Software Engineering", "Career"]
 authors: ["Ihor Katkov", "Ivan Pachesnyi"]
 canonicalUrl: "https://ihorkatkov.substack.com/p/the-amplifier-doesnt-care-you-have"
 cover: "../../assets/the-amplifier-doesnt-care.jpeg"
-coverAlt: "Pieter Bruegel's The Tower of Babel, overlaid with the article title and subtitle"
+coverAlt: "Pieter Bruegel the Elder, The Tower of Babel (1563)"
 draft: false
 ---
 
