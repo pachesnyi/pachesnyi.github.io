@@ -18,6 +18,10 @@ const published = post.data.pubDate.toLocaleDateString("en", {
   month: "long",
   day: "numeric",
 });
+
+const wordCount = post.body?.trim().split(/\s+/).filter(Boolean).length ?? 0;
+const readingTime = Math.max(1, Math.round(wordCount / 200));
+const authors = post.data.authors;
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
@@ -25,8 +29,12 @@ const published = post.data.pubDate.toLocaleDateString("en", {
     <header class="article-header">
       <p class="eyebrow">Article</p>
       <h1>{post.data.title}</h1>
+      {post.data.description && <p class="article-lead">{post.data.description}</p>}
+      {authors.length > 0 && <p class="article-byline">By {authors.join(" & ")}</p>}
       <div class="article-meta">
         <time datetime={post.data.pubDate.toISOString()}>{published}</time>
+        <span aria-hidden="true">·</span>
+        <span>{readingTime} min read</span>
       </div>
       <div class="tag-list" aria-label="Tags">
         {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
@@ -36,5 +44,15 @@ const published = post.data.pubDate.toLocaleDateString("en", {
     <div class="prose">
       <Content />
     </div>
+
+    {
+      post.data.canonicalUrl && (
+        <footer class="article-source">
+          <a href={post.data.canonicalUrl} target="_blank" rel="noreferrer">
+            Originally published on Substack →
+          </a>
+        </footer>
+      )
+    }
   </article>
 </BaseLayout>
