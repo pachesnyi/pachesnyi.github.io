@@ -15,24 +15,22 @@ const date = post.data.pubDate.toLocaleDateString("en", {
 ---
 
 <a class="post-card" href={`/blog/${post.id}/`}>
+  {
+    post.data.cover && (
+      <Image
+        class="post-card-cover"
+        src={post.data.cover}
+        alt={post.data.coverAlt ?? post.data.title}
+        widths={[400, 720]}
+        sizes="(max-width: 720px) 100vw, 720px"
+        loading="lazy"
+      />
+    )
+  }
+  <h3>{post.data.title}</h3>
   <time class="post-date" datetime={post.data.pubDate.toISOString()}>{date}</time>
-  <div>
-    {
-      post.data.cover && (
-        <Image
-          class="post-card-cover"
-          src={post.data.cover}
-          alt={post.data.coverAlt ?? post.data.title}
-          widths={[300, 600]}
-          sizes="(max-width: 620px) 100vw, 580px"
-          loading="lazy"
-        />
-      )
-    }
-    <h3>{post.data.title}</h3>
-    <p>{post.data.description}</p>
-    <div class="tag-list" aria-label="Tags">
-      {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
-    </div>
+  <p>{post.data.description}</p>
+  <div class="tag-list" aria-label="Tags">
+    {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
   </div>
 </a>
