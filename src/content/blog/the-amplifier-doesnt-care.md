@@ -10,7 +10,7 @@ coverAlt: "Pieter Bruegel the Elder, The Tower of Babel (1563)"
 draft: false
 ---
 
-Coding is solved. Coding is nowhere near solved. AI will replace all engineers within 5 years. Amazon stated that senior engineers review every line of AI-generated code because the AI kept breaking production. AI is the most important technology since the Internet. AI is a bubble, just like blockchain and the metaverse. The software sector lost $800 billion in market capitalization in three months. AI companies are raising money faster than at any point in history. Programmers have never been more productive. Programmers are losing productivity. Everyone is hiring? Nobody is hiring. You will be fine. You are so over.
+Coding is solved. Coding is nowhere near solved. AI will replace all engineers within 5 years. Amazon stated that senior engineers [review every line](https://www.techradar.com/pro/amazon-is-making-even-senior-engineers-get-code-signed-off-following-multiple-recent-outages) of AI-generated code because the AI kept breaking production. AI is the most important technology since the Internet. AI is a bubble, just like blockchain and the metaverse. The software sector lost $800 billion in market capitalization in three months. AI companies are raising money faster than at any point in history. Programmers have never been more productive. Programmers are losing productivity. [Everyone is hiring](https://www.lennysnewsletter.com/p/state-of-the-product-job-market-in-ee9?hide_intro_popup=true)? [Nobody is hiring](https://www.nytimes.com/2026/03/24/business/economy/college-graduates-job-market-hiring.html). You will be fine. You are so over.
 
 A year ago, I would never have believed what software engineering looks like today. Coding agents or even swarms of them, meta harnesses, and long-running fully automated sessions are now becoming the new normal.
 
@@ -28,9 +28,9 @@ Six claims. We will defend each one.
 
 ## AI is an amplifier of capability built on a commons.
 
-The purpose of a system is what it does, a claim famously attributed to Stafford Beer. What AI does, stripped of the marketing, is amplify individual capability by drawing on a collective body of knowledge. That is what the algorithm does mechanically. The internal mechanism is more structured than the popular "it just predicts the next word" summary suggests, and we have yet to fathom its inner workings.
+The purpose of a system is what it does, a claim famously attributed to Stafford Beer. What AI does, stripped of the marketing, is amplify individual capability by drawing on a collective body of knowledge. That is what the algorithm does mechanically. The [internal mechanism is more structured](https://dnhkng.github.io/posts/rys/) than the popular "it just predicts the next word" summary suggests, and we have yet to fathom its inner workings.
 
-The end result is that the mechanism amplifies whatever capability you point it at. For instance, a research team from France transcribed 32,000 medieval manuscripts in four months, work that would have taken human scholars decades, while Romania's 2024 presidential election was annulled after AI-generated deepfakes interfered with the results.
+The end result is that the mechanism amplifies whatever capability you point it at. For instance, a research team from France [transcribed 32,000 medieval manuscripts in four months](https://www.medievalists.net/2026/01/32000-medieval-manuscripts-transcribed-using-ai/), work that would have taken human scholars decades, while Romania's 2024 presidential election was annulled after [AI-generated deepfakes interfered with the results](https://www.cigionline.org/articles/then-and-now-how-does-ai-electoral-interference-compare-in-2025/).
 
 The same process that transcribes manuscripts and helps you lose weight also fabricates election results and poisons information systems. The mechanism does not care; you have to. The minimum it takes is judgment to evaluate what comes out, and enough basic decency to consider who it affects besides you.
 
@@ -64,7 +64,7 @@ When you're choosing tools and platforms, choose the ones that contribute to soc
 
 ## Engineers are not being replaced. The definition of engineering is being rewritten.
 
-Amazon, a company too big to fail if there ever was one, tried to cut the biggest corner known to humanity: humanity itself. It laid off tens of thousands of engineers citing AI efficiency, deployed 21,000 AI agents, and then suffered a string of production outages when the institutional knowledge it discarded turned out to be load-bearing. This doesn't sound like a successful replacement at all.
+Amazon, a company too big to fail if there ever was one, tried to cut the biggest corner known to humanity: humanity itself. It [laid off tens of thousands of engineers citing AI efficiency](https://www.ciodive.com/news/aws-layoffs-cloud-AI-andy-jassy/804046/), [deployed 21,000 AI agents](https://awesomeagents.ai/news/amazon-ai-code-review-outages-senior-approval/), and then [suffered a string of production outages](https://fortune.com/2026/03/12/amazon-retail-site-outages-ai-agent-inaccurate-advice/) when the institutional knowledge it discarded turned out to be load-bearing. This doesn't sound like a successful replacement at all.
 
 The tempting management story is simple: if AI writes code, fewer engineers are needed. But production systems do not run on code alone. They run on context, ownership, incident memory, architectural judgment, and the thousand small decisions that never make it into documentation.
 
@@ -76,7 +76,7 @@ Goldman Sachs' analysts reached the same conclusion on the capital markets side 
 
 ## Juniors are still needed. The definition of junior work has changed.
 
-In 2025, Salesforce CEO Marc Benioff announced the company would hire no new engineers, citing AI agents. A professor writing in Science admitted they were tempted to give their research tasks to AI rather than recruit a graduate student, because AI delivers immediate returns while a junior's value emerges slowly. The logic is the same in both cases: if the tool can handle the entry-level work, why invest in someone who needs months to ramp up?
+In 2025, Salesforce CEO Marc Benioff announced the company would hire no new engineers, citing AI agents. [A professor writing in Science admitted](https://www.science.org/content/article/why-i-may-hire-ai-instead-graduate-student) they were tempted to give their research tasks to AI rather than recruit a graduate student, because AI delivers immediate returns while a junior's value emerges slowly. The logic is the same in both cases: if the tool can handle the entry-level work, why invest in someone who needs months to ramp up?
 
 The logic is correct regarding the old tasks, but wrong regarding the conclusion. The tasks that defined junior work are now handled by agents. What follows is that the definition of junior work has changed, not that juniors are unnecessary. If you stop hiring juniors, you stop producing the next generation of seniors. The senior engineers that Amazon now requires for code review were all juniors once. Cut the entry point, and you eventually run out of the people whose oversight you depend on.
 

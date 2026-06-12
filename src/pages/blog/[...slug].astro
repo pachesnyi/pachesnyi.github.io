@@ -49,6 +49,19 @@ const authors = post.data.authors;
         <span aria-hidden="true">·</span>
         <span>{readingTime} min read</span>
       </div>
+      {
+        post.data.canonicalUrl && (
+          <p class="article-source">
+            <em>
+              Originally posted on{" "}
+              <a href={post.data.canonicalUrl} target="_blank" rel="noreferrer">
+                Substack
+              </a>
+              .
+            </em>
+          </p>
+        )
+      }
       <div class="tag-list" aria-label="Tags">
         {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
       </div>
@@ -57,15 +70,5 @@ const authors = post.data.authors;
     <div class="prose">
       <Content />
     </div>
-
-    {
-      post.data.canonicalUrl && (
-        <footer class="article-source">
-          <a href={post.data.canonicalUrl} target="_blank" rel="noreferrer">
-            Originally published on Substack →
-          </a>
-        </footer>
-      )
-    }
   </article>
 </BaseLayout>
