@@ -21,7 +21,7 @@ const published = post.data.pubDate.toLocaleDateString("en", {
 });
 
 const wordCount = post.body?.trim().split(/\s+/).filter(Boolean).length ?? 0;
-const readingTime = Math.max(1, Math.round(wordCount / 200));
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 const authors = post.data.authors;
 ---
 
@@ -54,7 +54,7 @@ const authors = post.data.authors;
           <p class="article-source">
             <em>
               Originally posted on{" "}
-              <a href={post.data.canonicalUrl} target="_blank" rel="noreferrer">
+              <a href={post.data.canonicalUrl} target="_blank" rel="noopener noreferrer">
                 Substack
               </a>
               .
